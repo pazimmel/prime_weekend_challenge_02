@@ -1,11 +1,10 @@
-//make a carousel out the incoming data
-    //store incoming data to a variable
-//link ids
+//declare general variables
 var zetaGitInfo = [];
 var indexTracker = 0;
 var countdown, interval; //variables for timer
 var carouselFade;
 
+//dynamic variables
 interval = 10;
 timerMessage = " seconds left";
 carouselFade = 1000;
@@ -19,7 +18,6 @@ $(document).ready(function(){
         success: function(dat){
             //store data into variable zetaGitInfo
             zetaGitInfo = dat.zeta;
-            //console.log(zetaGitInfo);
             //create carousel
             createCarousel(zetaGitInfo);
         }
@@ -40,6 +38,7 @@ function createCarousel(array) {
 
     $el.append("<div class = 'person container col-md-8'></div>");
     //$("#gitCarousel").children().last().prepend("<div class = 'person container col-mod-6'></div>");
+
     //call functions to create carousel
     createNavButtons();
     createIndexPoints();
@@ -48,7 +47,7 @@ function createCarousel(array) {
     carouselTimer(interval, timerMessage);
 
 
-    //function create index points to cycle through
+    //function to create index points to cycle through
     function createIndexPoints(){
         $el.append("<div class ='index-box col-md-6 col-md-offset-3'></div>") //box for all the index points
         for (var i =0;i<array.length; i++){
@@ -77,7 +76,7 @@ function updateIndexPoint(){
     }
 }
 
-//function to move carousel to the right
+//function to move index of carousel to the right
 function nextSlide(){
     stopCarouselTimer();
     indexTracker++;
@@ -90,7 +89,7 @@ function nextSlide(){
 
 }
 
-//function to move carousel to the left
+//function to move index of carousel to the left
 function prevSlide(){
     stopCarouselTimer();
     indexTracker--;
@@ -102,16 +101,18 @@ function prevSlide(){
     carouselTimer(interval,timerMessage);
 }
 
-//function to display git info on the carousel.
+//function to display git info on the carousel
 function updateInfo() {
     $(".person").empty();
 
+    //function call
     infoDiv(zetaGitInfo[indexTracker]);
 
     //make a div out of each property in the object and put it on the DOM inside the person class
     function infoDiv(object){
 
         //following commented code was used to do the same thing earlier. Think present code is cleaner.
+        //keeping this for posterity
         //$(".person").remove();
         //$("#gitCarousel").children().last().prepend("<div class = 'person container col-mod-6'></div>");
         //var $displayPerson = $("#gitCarousel").children().children().first();
@@ -130,14 +131,12 @@ function updateInfo() {
     $("#gitCarousel").find(".person").children().fadeIn(carouselFade);
 
 }
-//timer functions for the carousel
-//function startCarouselTimer(){
-//    intervalID = setInterval(nextSlide, interval);
-//}
+//timer functions for carousel
 function stopCarouselTimer(){
     clearInterval(countdown);
 }
 
+//timer function. Online it was originally a jQuery method
 //$.fn.countdown = function (callback, duration, message) {
 function carouselTimer(duration, message){
     $(".carousel-timer").remove();
