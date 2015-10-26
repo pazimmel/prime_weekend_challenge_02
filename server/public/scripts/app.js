@@ -140,7 +140,7 @@ function stopCarouselTimer(){
 
 //$.fn.countdown = function (callback, duration, message) {
 function carouselTimer(duration, message){
-    $(".carousel-timer").empty();
+    $(".carousel-timer").remove();
     // If no message is provided, we use an empty string
     message = message || "";
     // Get reference to container, and set initial content
@@ -151,7 +151,7 @@ function carouselTimer(duration, message){
         // If seconds remain
         if (--duration) {
             // Update our container's message
-            $(".carousel-timer").empty();
+            $(".carousel-timer").remove();
             $timerContainer.append("<div class = 'carousel-timer'>"+duration+message+"</div>");
             // Otherwise
         } else {

@@ -3,7 +3,7 @@
 }
 .nav-button {
     display:inline-block;
-    height:80px;
+    min-height:80px;
     text-align: center;
     font-size: 40px;
     margin:5px 0;
@@ -15,7 +15,7 @@
     display:inline-block;
     padding: 5px;
     height:120px;
-    width: 626px;
+    min-width: 626px;
 }
 
 
@@ -49,5 +49,5 @@
 }
 .carousel-timer {
     color: #B0C8CC;
-    margin-top: 10px;
+    margin-top: 10px 0 0 10px;
 }
