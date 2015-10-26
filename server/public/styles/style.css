@@ -1,0 +1,53 @@
+.main-carousel {
+    background-color: #D6E7E7;
+}
+.nav-button {
+    display:inline-block;
+    height:80px;
+    text-align: center;
+    font-size: 40px;
+    margin:5px 0;
+    padding-top: 20px;
+    color: #B0C8CC;
+}
+.person {
+    text-align: center;
+    display:inline-block;
+    padding: 5px;
+    height:120px;
+    width: 626px;
+}
+
+
+.person .name {
+    color: #AF806F;
+    font-size: 20px;
+}
+.person .shoutout {
+    padding-top: 10px;
+    color: #5F5751;
+}
+.person .github {
+    color: #B0C8CC;
+}
+
+.index-box {
+    display:inline-block;
+}
+.index-point{
+    height: 10px;
+    width: 10px;
+    /*background-color: #D0CBC2;*/
+    background-color: #B0C8CC;
+    display: inline-block;
+    margin: 0 5px;
+    border-radius: 50%;
+}
+.index-point-active {
+    border: 2px groove #B0C8CC;
+    background-color: whitesmoke;
+}
+.carousel-timer {
+    color: #B0C8CC;
+    margin-top: 10px;
+}
